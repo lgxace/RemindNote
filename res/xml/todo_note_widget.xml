@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:initialLayout="@layout/activity_todo_notelist"
+    android:minHeight="150dip"
+    android:minWidth="300dip"
+    android:updatePeriodMillis="1" >
+</appwidget-provider>

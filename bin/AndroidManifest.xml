@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.lgxace.remindnote"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="17" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.remindnote.activity.StartActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.remindnote.activity.NoteListActivity"
+            android:theme="@android:style/Theme.NoTitleBar" >
+        </activity>
+        <activity android:name="com.remindnote.activity.AddNoteActivity" >
+        </activity>
+        <activity android:name="com.remindnote.activity.NoteDetailActivity" />
+        <activity android:name="com.remindnote.activity.NoteRemindActivity" />
+
+        <service
+            android:name="com.remindnote.service.NoteRemindService"
+            android:label="@string/alarm_service_label"
+            android:process="com.remindnote.newalrm" >
+        </service>
+        <service
+            android:name="com.remindnote.service.TodoListViewService"
+            android:permission="android.permission.BIND_REMOTEVIEWS" />
+        <service android:name="com.remindnote.service.WidgetClickHanderService" />
+
+        <activity android:name="com.remindnote.activity.TODONoteListActivity" />
+
+        <receiver android:name="com.remindnote.provider.TodoWigdetProvider" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.wd.appwidgetupdate" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/todo_note_widget" >
+            </meta-data>
+        </receiver>
+    </application>
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+</manifest>
