@@ -124,7 +124,7 @@ public class NoteDetailActivity extends Activity implements
 			public void onClick(View arg0) {
 				if (mNoteConetent.getText().toString().length() > 150) {
 					ToastUtil.doUiToast(NoteDetailActivity.this,
-							NoteDetailActivity.this, "note content too long!",
+							NoteDetailActivity.this, getString(R.string.toast_data_base_error),
 							Toast.LENGTH_SHORT);
 					return ;
 				}
@@ -168,7 +168,7 @@ public class NoteDetailActivity extends Activity implements
 							});
 						} catch (Exception e) {
 							ToastUtil.doUiToast(NoteDetailActivity.this,
-									getApplicationContext(), "player error",
+									getApplicationContext(), getString(R.string.toast_player_error),
 									Toast.LENGTH_SHORT);
 						}
 					}
@@ -200,10 +200,10 @@ public class NoteDetailActivity extends Activity implements
 					NoteListActivity.class);
 			startActivity(intent);
 			ToastUtil
-					.doUiToast(this, this, "modified done", Toast.LENGTH_SHORT);
+					.doUiToast(this, this, getString(R.string.toast_modify_note_done), Toast.LENGTH_SHORT);
 			finish();
 		} catch (Exception e) {
-			ToastUtil.doUiToast(this, this, "data base error",
+			ToastUtil.doUiToast(this, this,getString(R.string.toast_data_base_error),
 					Toast.LENGTH_SHORT);
 			return;
 		} finally {

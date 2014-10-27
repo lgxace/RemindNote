@@ -184,7 +184,7 @@ public class NoteListActivity extends Activity implements
 			if (note.getmNoteType() > 0)
 				deleteMedia(note.getmNoteContent());
 		} catch (Exception e) {
-			ToastUtil.doUiToast(this, this, "file operation error", Toast.LENGTH_SHORT);
+			ToastUtil.doUiToast(this, this, getString(R.string.toast_file_operation_error), Toast.LENGTH_SHORT);
 		} finally {
 			table.closeDB();
 		}
@@ -210,7 +210,7 @@ public class NoteListActivity extends Activity implements
 		final int[] noteType = { RemindOperation.NOTE_TYPE_TEXT };
 		Builder builder = new AlertDialog.Builder(NoteListActivity.this)
 				.setIcon(android.R.drawable.ic_dialog_alert)
-				.setTitle("note type choice")
+				.setTitle(getString(R.string.add_note_select_note_type_title))
 				.setSingleChoiceItems(R.array.arrays_note_type, 0,
 						new DialogInterface.OnClickListener() {
 
@@ -222,7 +222,7 @@ public class NoteListActivity extends Activity implements
 									noteType[0] = RemindOperation.NOTE_TYPE_VIDEO;
 							}
 						})
-				.setPositiveButton("ok", new DialogInterface.OnClickListener() {
+				.setPositiveButton(getString(R.string.btn_txt_ok), new DialogInterface.OnClickListener() {
 
 					@Override
 					public void onClick(DialogInterface arg0, int arg1) {
@@ -233,7 +233,7 @@ public class NoteListActivity extends Activity implements
 						finish();
 					}
 				})
-				.setNegativeButton("cancel",
+				.setNegativeButton(getString(R.string.btn_txt_cancel),
 						new DialogInterface.OnClickListener() {
 
 							@Override
@@ -259,15 +259,15 @@ public class NoteListActivity extends Activity implements
 	private void doQuitAlert() {
 		new AlertDialog.Builder(NoteListActivity.this)
 				.setIcon(android.R.drawable.ic_dialog_alert)
-				.setTitle("sure to quit？")
-				.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+				.setTitle(getString(R.string.builder_quit_title))
+				.setPositiveButton(getString(R.string.builder_quit_yes), new DialogInterface.OnClickListener() {
 
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						finish();
 					}
 				})
-				.setNegativeButton("No", new DialogInterface.OnClickListener() {
+				.setNegativeButton(getString(R.string.builder_quit_no), new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						return;

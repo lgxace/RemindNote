@@ -2,13 +2,13 @@
 <resources>
 
     <string-array name="list_item_menu">
-        <item>delete note</item>
-        <item>TODO settings</item>
+        <item>删除</item>
+        <item>TODO设置</item>
     </string-array>
     <string-array name="arrays_note_type">
-        <item>text note</item>
-        <item>audio note</item>
-        <item>video note</item>
+        <item>文本 note</item>
+        <item>语音 note</item>
+        <item>视频 note</item>
     </string-array>
 
 </resources>

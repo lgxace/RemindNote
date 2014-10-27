@@ -106,7 +106,7 @@ public class NoteRemindActivity extends Activity {
 					addRemindTimeToDB(dateFormat.format(c.getTime()));
 				ToastUtil.doUiToast(NoteRemindActivity.this,
 						NoteRemindActivity.this,
-						"note remind time set completed", Toast.LENGTH_SHORT);
+						getString(R.string.note_alarm_settings_ok), Toast.LENGTH_SHORT);
 				doAlarm(mRemindTime);
 				Intent intent = new Intent(NoteRemindActivity.this,
 						NoteListActivity.class);
@@ -195,7 +195,7 @@ public class NoteRemindActivity extends Activity {
 			table = new NoteTable(getApplicationContext());
 			table.updateNote(sql);
 		} catch (Exception e) {
-			ToastUtil.doUiToast(this, this, "database server exception",
+			ToastUtil.doUiToast(this, this, getString(R.string.toast_data_base_error),
 					Toast.LENGTH_SHORT);
 			return;
 		} finally {
@@ -235,8 +235,6 @@ public class NoteRemindActivity extends Activity {
 			c.set(Calendar.SECOND, 0);
 			mAlarmManager.set(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(),
 					mAlarmSender);
-			Toast.makeText(NoteRemindActivity.this, "remind time setting done",
-					Toast.LENGTH_LONG).show();
 		}
 	}
 

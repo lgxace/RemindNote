@@ -20,7 +20,7 @@
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="标题" />
+            android:text="@string/note_title" />
 
         <EditText
             android:id="@+id/id_et_title"
@@ -28,7 +28,7 @@
             android:layout_height="fill_parent"
             android:layout_weight="0.2"
             android:gravity="center"
-            android:hint="输入标题" />
+            android:hint="@string/hint_input_note_title" />
     </LinearLayout>
 
     <RelativeLayout
@@ -47,7 +47,7 @@
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:gravity="top|center"
-                android:text="内容" />
+                android:text="@string/note_content" />
 
             <EditText
                 android:id="@+id/id_et_content"
@@ -55,7 +55,7 @@
                 android:layout_height="fill_parent"
                 android:layout_weight="0.2"
                 android:gravity="top|left"
-                android:hint="输入笔记内容"
+                android:hint="@string/hint_input_note_content"
                 android:singleLine="false" >
             </EditText>
         </LinearLayout>
@@ -108,14 +108,14 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:checked="true"
-                android:text="分享" />
+                android:text="@string/note_share_type_yes" />
 
             <RadioButton
                 android:id="@+id/id_rb_share_no"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:text="不分享" />
+                android:text="@string/note_share_type_no" />
         </RadioGroup>
 
         <LinearLayout
@@ -133,7 +133,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/btn_update_user_bg"
-                android:text="开始录制" />
+                android:text="@string/add_note_start_record" />
 
             <Button
                 android:id="@+id/btn_id_add_media_note_cancel"
@@ -142,7 +142,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_weight="1"
                 android:background="@drawable/btn_update_user_bg"
-                android:text="停止录制" />
+                android:text="@string/add_note_record_done" />
         </LinearLayout>
     </RelativeLayout>
 

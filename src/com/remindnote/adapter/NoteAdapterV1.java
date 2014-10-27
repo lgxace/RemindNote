@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 import com.lgxace.remindnote.R;
+import com.lgxace.remindnote.R.string;
 import com.remindnote.entity.Note;
 import com.remindnote.remind.DateOperation;
 import com.remindnote.remind.RemindOperation;
@@ -33,6 +34,7 @@ public class NoteAdapterV1 extends BaseAdapter {
 
 	private LayoutInflater mInflater;
 	private List<Note> mNotes;
+	private String country=null;
 
 	private SimpleDateFormat dateFormat = new SimpleDateFormat(
 			"yyyy-MM-dd HH:mm:ss");
@@ -41,6 +43,7 @@ public class NoteAdapterV1 extends BaseAdapter {
 		mInflater = (LayoutInflater) context
 				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		mNotes = notes;
+		country=context.getResources().getConfiguration().locale.getCountry();
 	}
 
 	@Override
@@ -98,8 +101,15 @@ public class NoteAdapterV1 extends BaseAdapter {
 		holder.tv_id_note_item_author.setText(note.getmUserID());
 		holder.tv_id_note_item_title.setText(note.getmNoteTitle() + " ");
 		holder.tv_id_note_item_note_date.setText(note.getmNoteDate());
-		holder.tv_id_note_item_note_share
-				.setText(note.getmShareType() == 1 ? "已分享" : "未分享");
+		
+		/**********************detect which country*****************************/
+		if(country.equals("CN")){
+			holder.tv_id_note_item_note_share
+			.setText(note.getmShareType() == 1 ? "已分享" : "未分享");
+		}else {
+			holder.tv_id_note_item_note_share
+			.setText(note.getmShareType() == 1 ? "shared" : "note share");
+		}
 		arg1.setTag(holder);
 		return arg1;
 	}

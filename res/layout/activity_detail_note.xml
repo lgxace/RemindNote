@@ -20,7 +20,7 @@
             android:layout_height="fill_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="标题" />
+            android:text="@string/note_title" />
 
         <EditText
             android:id="@+id/id_et_detailnote_title"
@@ -29,7 +29,7 @@
             android:layout_weight="0.2"
             android:enabled="false"
             android:gravity="center"
-            android:hint="输入标题"
+            android:hint="@string/hint_input_note_title"
             android:textColor="@color/listitem_black"
             android:textSize="@dimen/text_size_15"
             android:textStyle="bold" />
@@ -51,7 +51,7 @@
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:gravity="top|center"
-                android:text="内容" />
+                android:text="@string/note_content" />
 
             <EditText
                 android:id="@+id/id_et_detailnote_content"
@@ -59,7 +59,7 @@
                 android:layout_height="fill_parent"
                 android:layout_weight="0.2"
                 android:gravity="top|left"
-                android:hint="输入笔记内容"
+                android:hint="@string/hint_input_note_content"
                 android:singleLine="false" 
                 android:enabled="false"
                 android:textColor="@color/listitem_black">
@@ -131,7 +131,7 @@
                 android:layout_marginLeft="20dp"
                 android:checked="true"
                 android:enabled="false"
-                android:text="分享"
+                android:text="@string/note_share_type_yes"
                 android:textColor="@color/listitem_black" />
 
             <RadioButton
@@ -140,7 +140,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:enabled="false"
-                android:text="不分享"
+                android:text="@string/note_share_type_no"
                 android:textColor="@color/listitem_black" />
         </RadioGroup>
     </LinearLayout>

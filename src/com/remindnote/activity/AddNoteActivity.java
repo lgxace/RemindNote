@@ -104,7 +104,7 @@ public class AddNoteActivity extends Activity implements SurfaceHolder.Callback 
 				if (!titleInputDetect()) {
 					ToastUtil.doUiToast(AddNoteActivity.this,
 							getApplicationContext(),
-							"note title null or error!", Toast.LENGTH_SHORT);
+							getString(R.string.toast_note_title_null_or_error), Toast.LENGTH_SHORT);
 					return;
 				}
 				Intent intent = getIntent();
@@ -139,19 +139,19 @@ public class AddNoteActivity extends Activity implements SurfaceHolder.Callback 
 				if (!titleInputDetect()) {
 					ToastUtil.doUiToast(AddNoteActivity.this,
 							getApplicationContext(),
-							"note title null or error!", Toast.LENGTH_SHORT);
+							getString(R.string.toast_note_title_null_or_error), Toast.LENGTH_SHORT);
 					return;
 				}
 				if (!isRecorded && isRcording) {
 					ToastUtil.doUiToast(AddNoteActivity.this,
 							getApplicationContext(),
-							"record done", Toast.LENGTH_SHORT);
+							getString(R.string.toast_add_note_record_done), Toast.LENGTH_SHORT);
 					return;
 				}
 				if (!isRecorded && !isRcording) {
 					ToastUtil.doUiToast(AddNoteActivity.this,
 							getApplicationContext(),
-							"please record video firstly", Toast.LENGTH_SHORT);
+							getString(R.string.toast_add_note_record_first), Toast.LENGTH_SHORT);
 					return;
 				}
 				addVideoNoteEnd();
@@ -173,7 +173,7 @@ public class AddNoteActivity extends Activity implements SurfaceHolder.Callback 
 		if (noteType == RemindOperation.NOTE_TYPE_TEXT)
 			noteContent = mNoteContent.getText().toString();
 		if (!contentInputDetect()) {
-			ToastUtil.doUiToast(this, this, "note content too long",
+			ToastUtil.doUiToast(this, this, getString(R.string.toast_add_note_too_long_content),
 					Toast.LENGTH_SHORT);
 			return;
 		}
@@ -197,7 +197,7 @@ public class AddNoteActivity extends Activity implements SurfaceHolder.Callback 
 			Intent intent = new Intent(this, NoteListActivity.class);
 			startActivity(intent);
 		} catch (Exception e) {
-			ToastUtil.doUiToast(this, this, "data base error!",
+			ToastUtil.doUiToast(this, this, getString(R.string.toast_data_base_error),
 					Toast.LENGTH_SHORT);
 			return;
 		} finally {
@@ -258,13 +258,13 @@ public class AddNoteActivity extends Activity implements SurfaceHolder.Callback 
 	private void addAudioNote() {
 		if (isRcording) {
 			ToastUtil.doUiToast(AddNoteActivity.this, getApplicationContext(),
-					"recording...", Toast.LENGTH_SHORT);
+					getString(R.string.toast_add_note_record_going), Toast.LENGTH_SHORT);
 			return;
 		}
 		// if something wrong about user's input,do a remind
 		if (!titleInputDetect()) {
 			ToastUtil.doUiToast(AddNoteActivity.this, getApplicationContext(),
-					"note title null or err!", Toast.LENGTH_SHORT);
+					getString(R.string.toast_note_title_null_or_error), Toast.LENGTH_SHORT);
 			return;
 		}
 		isRcording = true;
@@ -310,7 +310,7 @@ public class AddNoteActivity extends Activity implements SurfaceHolder.Callback 
 			Intent intent = new Intent(this, NoteListActivity.class);
 			startActivity(intent);
 		} catch (Exception e) {
-			ToastUtil.doUiToast(this, this, "data base error!",
+			ToastUtil.doUiToast(this, this, getString(R.string.toast_data_base_error),
 					Toast.LENGTH_SHORT);
 			return;
 		} finally {
@@ -323,13 +323,13 @@ public class AddNoteActivity extends Activity implements SurfaceHolder.Callback 
 
 		if (isRcording) {
 			ToastUtil.doUiToast(AddNoteActivity.this, getApplicationContext(),
-					"recording", Toast.LENGTH_SHORT);
+					getString(R.string.toast_add_note_record_going), Toast.LENGTH_SHORT);
 			return;
 		}
 		// if something wrong about user's input,do a remind
 		if (!titleInputDetect()) {
 			ToastUtil.doUiToast(AddNoteActivity.this, getApplicationContext(),
-					"note title null or err!", Toast.LENGTH_SHORT);
+					getString(R.string.toast_note_title_null_or_error), Toast.LENGTH_SHORT);
 			return;
 		}
 		isRcording = true;

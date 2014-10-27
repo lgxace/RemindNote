@@ -17,5 +17,4 @@ public class RemindOperation {
 	public static int REMIND_TYPE_AUDIO=4;
 	public static int REMIND_TYPE_VIDIEO=5;
 	
-	
 }

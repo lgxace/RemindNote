@@ -114,7 +114,7 @@ public class TODONoteListActivity extends Activity implements
 			if (note.getmNoteType() > 0)
 				deleteMedia(note.getmNoteContent());
 		} catch (Exception e) {
-			ToastUtil.doUiToast(this, this, "data base error",
+			ToastUtil.doUiToast(this, this, getString(R.string.toast_data_base_error),
 					Toast.LENGTH_SHORT);
 		} finally {
 			table.closeDB();

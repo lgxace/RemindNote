@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RemindNote</string>
+    <string name="action_settings">Settings</string>
+    <string name="welcome_string">欢迎使用RemindNote</string>
+    <string name="string_copy_right">copyright @ lgxace.com</string>
+    <string name="no_notes">目前没有任何日记</string>
+    <string name="btn_txt_edit_note">修改笔记</string>
+    <string name="btn_txt_cancel">取消</string>
+    <string name="btn_txt_ok">确认</string>
+    <string name="remind_type_prompt">请选提醒类型</string>
+    <string name="note_alarm_settings_ok">设置提醒成功.</string>
+    <string name="note_alarm_msg">你有新事务要处理！</string>
+    <string name="alarm_service_label">记事本闹钟</string>
+    <string name="string_todo_note_list_title">TODO 列表</string>
+    <string name="string_note_list_title">笔记列表</string>
+    <string name="note_type_choice">请选择笔记类型</string>
+    <string name="note_title">标题</string>
+    <string name="note_content">内容</string>
+    <string name="note_share_type_yes">分享</string>
+    <string name="note_share_type_no">不分享</string>
+    <string name="hint_input_note_title">请输入标题</string>
+    <string name="hint_input_note_content">请输入笔记内容</string>
+    <string name="toast_note_title_null_or_error">note 标题为空或这格式错误</string>
+    <string name="todo_setting_title">TODO 设置</string>
+    <string name="todo_setting_todo_date">日期</string>
+    <string name="todo_setting_todo_time">时间</string>
+    <string name="todo_setting_select_remind_type">选择TODO类型</string>
+    <string name="todo_setting_done">note 提醒时间设置完成</string>
+    <string name="hint_todo_setting_date">TODO 日期</string>
+    <string name="hint_todo_setting_time">TODO 时间</string>
+    <string name="note_item_author">作者: </string>
+    <string name="note_item_time">时间: </string>
+    <string name="note_item_share_state">是否分享: </string>
+    <string name="note_item_share_state_yes">已分享</string>
+    <string name="note_item_share_state_no">未分享</string>
+    <string name="add_note_start_record">开始录制</string>
+    <string name="add_note_record_done">开始录制</string>
+    <string name="toast_add_note_record_done">录制完成</string>
+    <string name="toast_add_note_record_going">录制中...</string>
+    <string name="toast_add_note_record_first">请先录制</string>
+    <string name="toast_add_note_too_long_content">note 内容太长</string>
+    <string name="toast_data_base_error">数据库出错</string>
+    <string name="toast_player_error">播放器出错</string>
+    <string name="toast_modify_note_done">修改完成</string>
+    <string name="toast_file_operation_error">文件操作错误</string>
+    <string name="builder_quit_title">确定退出？</string>
+    <string name="builder_quit_yes">是的</string>
+    <string name="builder_quit_no">取消</string>
+    <string name="add_note_select_note_type_title">请选择note类型</string>
+<!--     <string name="add_note_select_note_type_text">文本 note</string>
+    <string name="add_note_select_note_type_audio">语音 note</string>
+    <string name="add_note_select_note_type_video">视频 note</string> -->
+
+</resources>

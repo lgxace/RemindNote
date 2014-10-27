@@ -19,7 +19,7 @@
             android:layout_gravity="center"
             android:background="@drawable/bg"
             android:gravity="center"
-            android:text="TODO 设置"
+            android:text="@string/todo_setting_title"
             android:textSize="@dimen/text_size_15"
             android:textStyle="bold" />
     </LinearLayout>
@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1.5"
                 android:gravity="center"
-                android:text="日期 " />
+                android:text="@string/todo_setting_todo_date" />
 
             <EditText
                 android:id="@+id/id_todo_showdate"
@@ -50,7 +50,7 @@
                 android:layout_weight="1"
                 android:focusable="false"
                 android:gravity="center"
-                android:hint="TODO日期" />
+                android:hint="@string/hint_todo_setting_date" />
         </LinearLayout>
     </LinearLayout>
 
@@ -71,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1.5"
                 android:gravity="center"
-                android:text="时间 " />
+                android:text="@string/todo_setting_todo_time" />
 
             <EditText
                 android:id="@+id/id_todo_showtiem"
@@ -80,7 +80,7 @@
                 android:layout_weight="1"
                 android:focusable="false"
                 android:gravity="center"
-                android:hint="TODO时间" />
+                android:hint="@string/hint_todo_setting_time" />
         </LinearLayout>
     </LinearLayout>
 

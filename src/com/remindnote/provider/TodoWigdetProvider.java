@@ -53,14 +53,12 @@ public class TodoWigdetProvider extends AppWidgetProvider {
 	public void onUpdate(Context context, AppWidgetManager appWidgetManager,
 			int[] appWidgetIds) {
 		super.onUpdate(context, appWidgetManager, appWidgetIds);
-		Log.d("remindnote_test:todowidgetprovider", "onUpdate()");
 		RemoteViews views = new RemoteViews(context.getPackageName(),
 				R.layout.activity_todo_notelist);
 
 		Intent intent = new Intent(context, TodoListViewService.class);
 		views.setRemoteAdapter(R.id.lv_id_todo_notes, intent);
 		
-		Log.d("remindnote_test:todowidgetprovider", "to be WidgetClickHanderService");
 		Intent clickIntent = new Intent(context, WidgetClickHanderService.class);
 		PendingIntent pendingIntent = PendingIntent.getService(context, 0,
 				clickIntent, PendingIntent.FLAG_UPDATE_CURRENT);
