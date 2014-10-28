@@ -105,7 +105,7 @@ public class NoteAdapterV1 extends BaseAdapter {
 			.setText(note.getmShareType() == 1 ? "已分享" : "未分享");
 		}else {
 			holder.tv_id_note_item_note_share
-			.setText(note.getmShareType() == 1 ? "shared" : "note share");
+			.setText(note.getmShareType() == 1 ? "shared" : "not to share");
 		}
 		arg1.setTag(holder);
 		return arg1;
