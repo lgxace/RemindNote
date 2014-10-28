@@ -29,6 +29,8 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
+import android.widget.TextView.OnEditorActionListener;
 import android.widget.Toast;
 
 /**
@@ -172,11 +174,6 @@ public class AddNoteActivity extends Activity implements SurfaceHolder.Callback 
 		String noteContent = "";
 		if (noteType == RemindOperation.NOTE_TYPE_TEXT)
 			noteContent = mNoteContent.getText().toString();
-		if (!contentInputDetect()) {
-			ToastUtil.doUiToast(this, this, getString(R.string.toast_add_note_too_long_content),
-					Toast.LENGTH_SHORT);
-			return;
-		}
 
 		if (noteType == RemindOperation.NOTE_TYPE_AUDIO)
 			noteContent = RemindOperation.MEDIA_AUDIO_PATH + noteTitle;
@@ -338,9 +335,6 @@ public class AddNoteActivity extends Activity implements SurfaceHolder.Callback 
 	}
 
 	private boolean titleInputDetect() {
-		if (mNoteTile.getText().toString().length() >= 20) {
-			return false;
-		}
 		RegexUtil regexUtil = new RegexUtil(RegexUtil.REGEX_WORD, mNoteTile
 				.getText().toString());
 		return regexUtil.isMatch();

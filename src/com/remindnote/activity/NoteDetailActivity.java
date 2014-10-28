@@ -122,13 +122,6 @@ public class NoteDetailActivity extends Activity implements
 
 			@Override
 			public void onClick(View arg0) {
-				if (mNoteConetent.getText().toString().length() > 150) {
-					ToastUtil.doUiToast(NoteDetailActivity.this,
-							NoteDetailActivity.this,
-							getString(R.string.toast_data_base_error),
-							Toast.LENGTH_SHORT);
-					return;
-				}
 				editNoteOperation();
 			}
 		});

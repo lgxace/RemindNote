@@ -58,11 +58,12 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_weight="0.2"
+                android:enabled="false"
                 android:gravity="top|left"
                 android:hint="@string/hint_input_note_content"
-                android:singleLine="false" 
-                android:enabled="false"
-                android:textColor="@color/listitem_black">
+                android:maxLength="200"
+                android:singleLine="false"
+                android:textColor="@color/listitem_black" >
             </EditText>
         </LinearLayout>
 
@@ -79,7 +80,7 @@
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:src="@drawable/audio_player"/>
+                android:src="@drawable/audio_player" />
         </LinearLayout>
 
         <LinearLayout
@@ -107,7 +108,7 @@
                     android:layout_height="fill_parent"
                     android:layout_gravity="center"
                     android:layout_weight="1"
-                    android:src="@drawable/video_player"/>
+                    android:src="@drawable/video_player" />
             </RelativeLayout>
         </LinearLayout>
     </RelativeLayout>
