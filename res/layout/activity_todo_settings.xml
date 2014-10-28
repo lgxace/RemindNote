@@ -101,7 +101,7 @@
                 android:layout_gravity="center"
                 android:layout_weight="1.5"
                 android:gravity="center"
-                android:text="选择TODO类型 " />
+                android:text="@string/todo_setting_select_remind_type" />
 
             <Spinner
                 android:id="@+id/sp_id_note_remind_type"
@@ -129,7 +129,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/btn_update_user_bg"
-                android:text="确认" />
+                android:text="@string/btn_txt_ok" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -142,7 +142,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/btn_update_user_bg"
-                android:text="取消" />
+                android:text="@string/btn_txt_cancel" />
         </LinearLayout>
     </LinearLayout>
 

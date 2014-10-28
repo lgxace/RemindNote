@@ -6,16 +6,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import com.lgxace.remindnote.R;
-import com.lgxace.remindnote.R.string;
-import com.remindnote.entity.Note;
-import com.remindnote.remind.DateOperation;
-import com.remindnote.remind.RemindOperation;
-
 import android.content.Context;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.LayerDrawable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,6 +15,11 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.lgxace.remindnote.R;
+import com.remindnote.entity.Note;
+import com.remindnote.remind.DateOperation;
+import com.remindnote.remind.RemindOperation;
 
 /**
  * used to adapt notes to list view activity

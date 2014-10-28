@@ -26,7 +26,7 @@
     <string name="todo_setting_title">TODO 设置</string>
     <string name="todo_setting_todo_date">日期</string>
     <string name="todo_setting_todo_time">时间</string>
-    <string name="todo_setting_select_remind_type">选择TODO类型</string>
+    <string name="todo_setting_select_remind_type">选择TODO类型 </string>
     <string name="todo_setting_done">note 提醒时间设置完成</string>
     <string name="hint_todo_setting_date">TODO 日期</string>
     <string name="hint_todo_setting_time">TODO 时间</string>

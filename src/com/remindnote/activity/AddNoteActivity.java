@@ -404,5 +404,4 @@ public class AddNoteActivity extends Activity implements SurfaceHolder.Callback 
 			recorder.release();
 		}
 	}
-	
 }

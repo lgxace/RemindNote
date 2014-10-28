@@ -124,9 +124,10 @@ public class NoteDetailActivity extends Activity implements
 			public void onClick(View arg0) {
 				if (mNoteConetent.getText().toString().length() > 150) {
 					ToastUtil.doUiToast(NoteDetailActivity.this,
-							NoteDetailActivity.this, getString(R.string.toast_data_base_error),
+							NoteDetailActivity.this,
+							getString(R.string.toast_data_base_error),
 							Toast.LENGTH_SHORT);
-					return ;
+					return;
 				}
 				editNoteOperation();
 			}
@@ -168,7 +169,8 @@ public class NoteDetailActivity extends Activity implements
 							});
 						} catch (Exception e) {
 							ToastUtil.doUiToast(NoteDetailActivity.this,
-									getApplicationContext(), getString(R.string.toast_player_error),
+									getApplicationContext(),
+									getString(R.string.toast_player_error),
 									Toast.LENGTH_SHORT);
 						}
 					}
@@ -199,11 +201,13 @@ public class NoteDetailActivity extends Activity implements
 			Intent intent = new Intent(NoteDetailActivity.this,
 					NoteListActivity.class);
 			startActivity(intent);
-			ToastUtil
-					.doUiToast(this, this, getString(R.string.toast_modify_note_done), Toast.LENGTH_SHORT);
+			ToastUtil.doUiToast(this, this,
+					getString(R.string.toast_modify_note_done),
+					Toast.LENGTH_SHORT);
 			finish();
 		} catch (Exception e) {
-			ToastUtil.doUiToast(this, this,getString(R.string.toast_data_base_error),
+			ToastUtil.doUiToast(this, this,
+					getString(R.string.toast_data_base_error),
 					Toast.LENGTH_SHORT);
 			return;
 		} finally {
@@ -276,10 +280,10 @@ public class NoteDetailActivity extends Activity implements
 	@Override
 	public void surfaceDestroyed(SurfaceHolder holder) {
 
-		if (player != null && player.isPlaying()) {
+		if (player != null ) {
 			player.stop();
+			player.release();
 		}
-		player.release();
 		super.onDestroy();
 	}
 }
