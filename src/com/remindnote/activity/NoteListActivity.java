@@ -52,8 +52,10 @@ public class NoteListActivity extends Activity implements
 		notes = new ArrayList<Note>();
 		setNoteList();
 		// if no note,show remind UI
-		if (!hasNote())
+		if (!hasNote()){
 			mNotes.setVisibility(View.GONE);
+			mNoNotes.setVisibility(View.VISIBLE);
+		}
 		else
 			mNoNotes.setVisibility(View.GONE);
 		setListener();

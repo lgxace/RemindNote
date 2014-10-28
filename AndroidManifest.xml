@@ -49,7 +49,8 @@
 
         <activity
             android:name="com.remindnote.activity.TODONoteListActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.NoTitleBar" />
 
         <receiver android:name="com.remindnote.provider.TodoWigdetProvider" >
             <intent-filter>
