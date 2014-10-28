@@ -66,9 +66,10 @@
                 android:layout_gravity="center"
                 android:gravity="center"
                 android:text="@string/no_notes"
-                android:textSize="@dimen/text_size_15"
+                android:textSize="@dimen/text_size_30"
                 android:textStyle="bold" 
-                android:layout_below="@id/lv_id_notes"/>
+                android:layout_below="@id/lv_id_notes"
+                android:visibility="gone"/>
         </RelativeLayout>
     </LinearLayout>
 

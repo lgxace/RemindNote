@@ -31,7 +31,6 @@ public class TodoListViewService extends RemoteViewsService {
 		List<Note> notes1 = table.queryAll();
 		List<Note> notes2 = new ArrayList<Note>();
 		if (notes1 != null && notes1.size() > 0) {
-			notes2 = new ArrayList<Note>();
 			for (Note note : notes1) {
 				if (!note.getmReindTime().equals(""))
 					notes2.add(note);
@@ -43,10 +42,13 @@ public class TodoListViewService extends RemoteViewsService {
 	private static class ListRemoteViewsFactory implements RemoteViewsFactory {
 		private List<Note> mList;
 		private Context mContext;
+		private String countryString;
 
 		public ListRemoteViewsFactory(Context context, List<Note> list) {
 			mList = list;
 			mContext = context;
+			countryString = context.getResources().getConfiguration().locale
+					.getCountry();
 		}
 
 		@Override
@@ -63,8 +65,13 @@ public class TodoListViewService extends RemoteViewsService {
 			rv.setTextViewText(R.id.tv_id_note_item_author, note.getmUserID());
 			rv.setTextViewText(R.id.tv_id_note_item_note_date,
 					note.getmNoteDate());
-			rv.setTextViewText(R.id.tv_id_note_item_note_share,
-					note.getmShareType() == 1 ? "已分享" : "未分享");
+
+			if (countryString.equals("CN"))
+				rv.setTextViewText(R.id.tv_id_note_item_note_share,
+						note.getmShareType() == 1 ? "已分享" : "未分享");
+			else
+				rv.setTextViewText(R.id.tv_id_note_item_note_share,
+						note.getmShareType() == 1 ? "shared" : "not shared");
 
 			// add note type icon in widget note item
 			if (note.getmNoteType() == RemindOperation.NOTE_TYPE_TEXT) {
@@ -77,7 +84,6 @@ public class TodoListViewService extends RemoteViewsService {
 				rv.setImageViewResource(R.id.image_note_type,
 						R.drawable.img_video);
 			}
-
 			Intent intent = new Intent(mContext, WidgetClickHanderService.class)
 					.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			rv.setOnClickFillInIntent(R.id.item_layout, intent);
