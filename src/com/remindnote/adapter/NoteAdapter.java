@@ -1,17 +1,14 @@
 package com.remindnote.adapter;
 
-import java.io.ObjectOutputStream.PutField;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-import com.lgxace.remindnote.R;
-import com.remindnote.entity.Note;
-import com.remindnote_db.NoteTable;
-
 import android.content.Context;
 import android.widget.SimpleAdapter;
+
+import com.lgxace.remindnote.R;
+import com.remindnote.entity.Note;
 
 
 public class NoteAdapter {

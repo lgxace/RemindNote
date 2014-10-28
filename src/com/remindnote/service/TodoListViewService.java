@@ -29,12 +29,13 @@ public class TodoListViewService extends RemoteViewsService {
 	public RemoteViewsFactory onGetViewFactory(Intent intent) {
 		NoteTable table = new NoteTable(getApplicationContext());
 		List<Note> notes1 = table.queryAll();
-		if (notes1 == null || notes1.size() <= 0)
-			return null;
 		List<Note> notes2 = new ArrayList<Note>();
-		for (Note note : notes1) {
-			if (!note.getmReindTime().equals(""))
-				notes2.add(note);
+		if (notes1 != null && notes1.size() > 0) {
+			notes2 = new ArrayList<Note>();
+			for (Note note : notes1) {
+				if (!note.getmReindTime().equals(""))
+					notes2.add(note);
+			}
 		}
 		return new ListRemoteViewsFactory(this, notes2);
 	}
@@ -64,19 +65,21 @@ public class TodoListViewService extends RemoteViewsService {
 					note.getmNoteDate());
 			rv.setTextViewText(R.id.tv_id_note_item_note_share,
 					note.getmShareType() == 1 ? "已分享" : "未分享");
-			
-			//add note type icon in widget note item
-			if(note.getmNoteType()==RemindOperation.NOTE_TYPE_TEXT){
-				rv.setImageViewResource(R.id.image_note_type, R.drawable.img_text);
+
+			// add note type icon in widget note item
+			if (note.getmNoteType() == RemindOperation.NOTE_TYPE_TEXT) {
+				rv.setImageViewResource(R.id.image_note_type,
+						R.drawable.img_text);
+			} else if (note.getmNoteType() == RemindOperation.NOTE_TYPE_AUDIO) {
+				rv.setImageViewResource(R.id.image_note_type,
+						R.drawable.img_audio);
+			} else if (note.getmNoteType() == RemindOperation.NOTE_TYPE_VIDEO) {
+				rv.setImageViewResource(R.id.image_note_type,
+						R.drawable.img_video);
 			}
-			else if(note.getmNoteType()==RemindOperation.NOTE_TYPE_AUDIO){
-				rv.setImageViewResource(R.id.image_note_type, R.drawable.img_audio);
-			}
-			else if(note.getmNoteType()==RemindOperation.NOTE_TYPE_VIDEO){
-				rv.setImageViewResource(R.id.image_note_type, R.drawable.img_video);
-			}
-			
-			Intent intent = new Intent(mContext, WidgetClickHanderService.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+			Intent intent = new Intent(mContext, WidgetClickHanderService.class)
+					.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			rv.setOnClickFillInIntent(R.id.item_layout, intent);
 			showRemindNoteInText(note, rv);
 			return rv;

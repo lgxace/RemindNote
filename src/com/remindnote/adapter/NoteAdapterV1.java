@@ -6,6 +6,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.util.Log;
@@ -27,6 +28,7 @@ import com.remindnote.remind.RemindOperation;
  * @author guangxiang.liang
  * 
  */
+@SuppressLint("SimpleDateFormat")
 public class NoteAdapterV1 extends BaseAdapter {
 
 	private LayoutInflater mInflater;
@@ -119,22 +121,6 @@ public class NoteAdapterV1 extends BaseAdapter {
 
 	}
 
-	private Calendar analysisReindTime(String remindTime) {
-		int year = Integer.parseInt(remindTime.substring(0, 3));
-		int month = Integer.parseInt(remindTime.substring(5, 6));
-		int day = Integer.parseInt(remindTime.substring(8, 9));
-		int hour = Integer.parseInt(remindTime.substring(12, 13));
-		int minute = Integer.parseInt(remindTime.substring(14, 15));
-
-		Calendar calendar = Calendar.getInstance();
-		calendar.set(Calendar.YEAR, year);
-		calendar.set(Calendar.MONTH, month);
-		calendar.set(Calendar.DAY_OF_MONTH, day);
-		calendar.set(Calendar.HOUR_OF_DAY, hour);
-		calendar.set(Calendar.MINUTE, minute);
-		return calendar;
-	}
-
 	private void showRemindNoteInText(final Note note, final View view) {
 		Log.d("remindnote_test", "getView(),start showRemindNoteInText");
 		if (!note.getmReindTime().equals("")) {
@@ -173,7 +159,6 @@ public class NoteAdapterV1 extends BaseAdapter {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
-		Date date2 = Calendar.getInstance().getTime();
 		return (date.getTime() - Calendar.getInstance().getTime().getTime())
 				/ DateOperation.LONG_MINUTE_BASE;
 	}
